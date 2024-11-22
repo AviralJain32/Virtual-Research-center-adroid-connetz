@@ -7,11 +7,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { projectCardDataType } from "@/types/HomePageTypes";
+import Image from "next/image";
 
 export function ProjectCard({ image, name, description }: projectCardDataType) {
   return (
     <Card className="w-full max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-      <img src={image} alt={name} className="w-full h-48 object-cover" />
+      <Image src={image} alt={name} width={400} height={100} className="w-full h-48 object-cover" />
       <CardHeader>
         <CardTitle className="text-xl font-bold text-gray-800">{name}</CardTitle>
       </CardHeader>

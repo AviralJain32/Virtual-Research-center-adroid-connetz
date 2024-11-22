@@ -4,7 +4,6 @@ import { NewsAndHighlightsCard } from "@/components/HomePageComponents/NewsAndHi
 import { ProjectCard } from "@/components/HomePageComponents/ProjectCard";
 import { PublicationCard } from "@/components/HomePageComponents/PublicationCard";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { NewsAndHighlightsCardDataType, projectCardDataType, publicationCardDataType } from "@/types/HomePageTypes";
 import Image from "next/image";
 
