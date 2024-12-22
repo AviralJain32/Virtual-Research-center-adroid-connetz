@@ -12,7 +12,6 @@ import {
   MenubarSubTrigger,
   MenubarTrigger,
 } from "@/components/ui/menubar";
-import { Link} from 'react-scroll';
 import NextLink from "next/link"
 import { useRouter } from "next/navigation";
 

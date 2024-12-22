@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import * as React from "react";
 
 const teamData = {
@@ -38,7 +39,7 @@ const teamData = {
 const TeamPage = () => {
   const renderCard = (member: { name: string; role: string; image: string }) => (
     <div className="flex flex-col items-center bg-white shadow-md rounded-lg p-4">
-      <img
+      <Image
         src={member.image}
         alt={member.name}
         className="w-32 h-32 object-cover rounded-full mb-4"

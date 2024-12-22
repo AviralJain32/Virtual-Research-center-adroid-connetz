@@ -28,7 +28,7 @@ const AboutUsPage = () => {
             attendees.
             <br />
             <br />
-            Whether it's managing academic conferences, streamlining the paper
+            Whether it&apos;s managing academic conferences, streamlining the paper
             submission process, or fostering meaningful discussions within the
             research community, our platform is at the forefront of
             technological excellence. Built on the principles of accessibility,
@@ -36,9 +36,9 @@ const AboutUsPage = () => {
             technology and human creativity.
             <br />
             <br />
-            Since our inception, we've grown into a trusted partner for numerous
+            Since our inception, we&apos;ve grown into a trusted partner for numerous
             academic institutions, enterprises, and innovators worldwide.
-            Together, we're shaping a future where knowledge sharing is
+            Together, we&apos;re shaping a future where knowledge sharing is
             effortless, impactful, and boundless.
           </p>
         </div>
