@@ -6,67 +6,70 @@ import { PublicationCard } from "@/components/HomePageComponents/PublicationCard
 import { Button } from "@/components/ui/button";
 import { NewsAndHighlightsCardDataType, projectCardDataType, publicationCardDataType } from "@/types/HomePageTypes";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 
 export default function Home() {
 
-  const ProjectCardData:projectCardDataType[]=[
-    {
-      image:"https://images.pexels.com/photos/7723574/pexels-photo-7723574.jpeg",
-      name:"Project A: Transforming Healthcare Through Technology",
-      description:"This project focuses on integrating AI into patient care."
-    },
-    {
-      image:"https://images.pexels.com/photos/7947711/pexels-photo-7947711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      name:"Project B: Sustainable Energy Solutions for Tomorrow",
-      description:"We are developing renewable energy technologies to combat climate change."
-    },
-    {
-      image:"https://images.pexels.com/photos/272980/pexels-photo-272980.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      name:"Project C: Advancements in Educational Technology",
-      description:"This initiative enhances learning experiences through innovative digital tools."
-    }
-  ]
-
-  const PublicationCardData:publicationCardDataType[]=[
-    {
-      name:"Project A: Transforming Healthcare Through Technology",
-      description:"This project focuses on integrating AI into patient care."
-    },
-    {
-      name:"Project B: Sustainable Energy Solutions for Tomorrow",
-      description:"We are developing renewable energy technologies to combat climate change."
-    },
-    {
-      name:"Project C: Advancements in Educational Technology",
-      description:"This initiative enhances learning experiences through innovative digital tools."
-    }
-  ]
-
+  const router=useRouter();
   
-  const NewsAndHighlightsCardData:NewsAndHighlightsCardDataType[]=[
-    {
-      readMinutes:"5 min",
-      Type:"News",
-      image:"https://images.pexels.com/photos/7723574/pexels-photo-7723574.jpeg",
-      name:"Innovative Solutions in Research",
-      description:"Explore how our latest project is transforming research methodologies."
-    },
-    {
-      readMinutes:"5 min",
-      Type:"News",
-      image:"https://images.pexels.com/photos/7723574/pexels-photo-7723574.jpeg",
-      name:"Join Our Upcoming Webinar",
-      description:"Learn about the latest trends in research during our interactive session."
-    },
-    {
-      readMinutes:"5 min",
-      Type:"News",
-      image:"https://images.pexels.com/photos/7723574/pexels-photo-7723574.jpeg",
-      name:"Celebrating Our Recent Success",
-      description:"Discover the impact of our latest research on the community."
-    }
-  ]
+  const PublicationCardData:publicationCardDataType[]=[
+          {
+            name:"Project A: Transforming Healthcare Through Technology",
+            description:"This project focuses on integrating AI into patient care."
+          },
+          {
+            name:"Project B: Sustainable Energy Solutions for Tomorrow",
+            description:"We are developing renewable energy technologies to combat climate change."
+          },
+          {
+            name:"Project C: Advancements in Educational Technology",
+            description:"This initiative enhances learning experiences through innovative digital tools."
+          }
+        ]
+  const ProjectCardData:projectCardDataType[]=[
+      {
+        image:"https://images.pexels.com/photos/7723574/pexels-photo-7723574.jpeg",
+        name:"Project A: Transforming Healthcare Through Technology",
+        description:"This project focuses on integrating AI into patient care."
+      },
+      {
+        image:"https://images.pexels.com/photos/7947711/pexels-photo-7947711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        name:"Project B: Sustainable Energy Solutions for Tomorrow",
+        description:"We are developing renewable energy technologies to combat climate change."
+      },
+      {
+        image:"https://images.pexels.com/photos/272980/pexels-photo-272980.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        name:"Project C: Advancements in Educational Technology",
+        description:"This initiative enhances learning experiences through innovative digital tools."
+      }
+    ]
+
+    const NewsAndHighlightsCardData:NewsAndHighlightsCardDataType[]=[
+            {
+              readMinutes:"5 min",
+              Type:"News",
+              image:"https://images.pexels.com/photos/7723574/pexels-photo-7723574.jpeg",
+              name:"Innovative Solutions in Research",
+              description:"Explore how our latest project is transforming research methodologies."
+            },
+            {
+              readMinutes:"5 min",
+              Type:"News",
+              image:"https://images.pexels.com/photos/7723574/pexels-photo-7723574.jpeg",
+              name:"Join Our Upcoming Webinar",
+              description:"Learn about the latest trends in research during our interactive session."
+            },
+            {
+              readMinutes:"5 min",
+              Type:"News",
+              image:"https://images.pexels.com/photos/7723574/pexels-photo-7723574.jpeg",
+              name:"Celebrating Our Recent Success",
+              description:"Discover the impact of our latest research on the community."
+            }
+          ]
+
+
   return (
     <main>
       <section className="relative w-full h-[50vh]"> {/* Adjust height as needed */}
@@ -104,7 +107,6 @@ export default function Home() {
     </div>
   </div>
 </section>
-
 <section className="text-center py-16 bg-gray-50">
   <div className="max-w-3xl mx-auto">
     <h3 className="text-xl font-semibold text-blue-600">Innovate</h3>
@@ -118,13 +120,15 @@ export default function Home() {
       <ProjectCard key={CardData.name} {...CardData} />
     ))}
   </div>
+  <Button onClick={()=>router.push("/key-projects")} className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 shadow-md">
+    View All Projects
+  </Button>
 </section>
 
-
-<section className="text-center py-16 ">
+<section className="text-center py-16">
   <div className="max-w-3xl mx-auto">
     <h3 className="text-xl font-semibold text-blue-600">Discover</h3>
-    <h2 className="text-4xl font-bold text-gray-800 my-4">Explore Our Most Impactful Publications</h2>
+    <h2 className="text-4xl font-bold text-gray-800 my-4" id="featured-publications">Explore Our Most Impactful Publications</h2>
     <p className="text-lg text-gray-600">
       Dive into our latest research that is shaping the future. These publications showcase groundbreaking findings and innovative applications.
     </p>
@@ -134,6 +138,9 @@ export default function Home() {
       <PublicationCard key={CardData.name} {...CardData} />
     ))}
   </div>
+  <Button onClick={()=>router.push("/featured-publication")} className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 shadow-md">
+    View All Publications
+  </Button>
 </section>
 
 <section className="text-center py-16 bg-gray-50">
@@ -149,6 +156,9 @@ export default function Home() {
       <NewsAndHighlightsCard key={CardData.name} {...CardData} />
     ))}
   </div>
+  <Button onClick={()=>router.push("/recent-highlights")} className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 shadow-md">
+    View All Highlights
+  </Button>
 </section>
 
     </main>
