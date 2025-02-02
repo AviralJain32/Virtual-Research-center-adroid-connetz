@@ -12,11 +12,17 @@ import {
   MenubarSubTrigger,
   MenubarTrigger,
 } from "@/components/ui/menubar";
+import { User } from "next-auth";
+import { useSession } from 'next-auth/react';
+import Link from "next/link";
 import NextLink from "next/link"
 import { useRouter } from "next/navigation";
+import { Account } from "./AccountSectionNavbar";
 
 const Navbar = () => { 
   const router=useRouter()
+  const { data: session } = useSession();
+  const user: User = session?.user;
   return (
     <header className="w-full bg-white shadow-md">
       <div className=" mx-auto flex items-center justify-between py-4 px-6">
@@ -65,34 +71,34 @@ const Navbar = () => {
           </MenubarMenu>
 
           
-
+          
           {/* Research */}
           <MenubarMenu>
-            <MenubarTrigger>Research</MenubarTrigger>
+            <MenubarTrigger onClick={()=>router.push("/researchThemes")}>Research</MenubarTrigger>
             <MenubarContent>
-              <MenubarItem>Research Themes</MenubarItem>
+              <MenubarItem onClick={()=>router.push("/researchThemes")}>Research Themes</MenubarItem>
               <MenubarSub>
-                <MenubarSubTrigger>Emerging Applications/Use Cases</MenubarSubTrigger>
+                <MenubarSubTrigger onClick={()=>router.push("/emergingApplications")}>Emerging Applications/Use Cases</MenubarSubTrigger>
                 <MenubarSubContent>
-                  <MenubarItem>Completed Projects</MenubarItem>
-                  <MenubarItem>Collaborators</MenubarItem>
+                  <MenubarItem ><Link href={"/emergingApplications#EmergingApplications"} scroll={true}>Completed Projects</Link></MenubarItem>
+                  <MenubarItem ><Link href={"/emergingApplications#EmergingApplications"} scroll={true}>Collaborators</Link></MenubarItem>
                 </MenubarSubContent>
               </MenubarSub>
-              <MenubarItem>Upcoming Funding Calls</MenubarItem>
+              <MenubarItem onClick={()=>router.push("/upcomingFundingCalls")}>Upcoming Funding Calls</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
 
           {/* Services/Consultancy */}
           <MenubarMenu>
-            <MenubarTrigger>Services/Consultancy</MenubarTrigger>
+            <MenubarTrigger><Link href={"/proposalWritingTraining"}>Services/Consultancy</Link></MenubarTrigger>
             <MenubarContent>
-              <MenubarItem>Proposal Writing Training</MenubarItem>
-              <MenubarItem>Impact Case Studies</MenubarItem>
-              <MenubarItem>Training to Publish High-Quality Articles</MenubarItem>
-              <MenubarItem>Bridging and Connecting Services</MenubarItem>
+              <MenubarItem> <Link href={"/proposalWritingTraining"}>Proposal Writing Training</Link></MenubarItem>
+              <MenubarItem> <Link href={"/ImpactCaseStudies"}>Impact Case Studies</Link></MenubarItem>
+              <MenubarItem> <Link href={"/HighQualityArticles"}>Training to Publish High-Quality Articles</Link></MenubarItem>
+              <MenubarItem> <Link href={"/BridgingAndConnectingServices"}>Bridging and Connecting Services</Link></MenubarItem>
             </MenubarContent>
           </MenubarMenu>
-
+          
           {/* Join Us */}
           {/* <MenubarMenu>
             <MenubarTrigger>Join Us</MenubarTrigger>
@@ -107,24 +113,42 @@ const Navbar = () => {
           <MenubarMenu>
             <MenubarTrigger>Resources and Publications</MenubarTrigger>
             <MenubarContent>
-              <MenubarSub>
-                <MenubarSubTrigger>Publications</MenubarSubTrigger>
-                <MenubarSubContent>
+            <MenubarSub>
+              <Link href="/publications"><MenubarSubTrigger>Publications</MenubarSubTrigger></Link>
+              <MenubarSubContent>
+                <Link href="/publications#journals">
                   <MenubarItem>Journals</MenubarItem>
+                </Link>
+                <Link href="/publications#conferences">
                   <MenubarItem>Conferences</MenubarItem>
+                </Link>
+                <Link href="/publications#books-chapters">
                   <MenubarItem>Books and Chapters</MenubarItem>
+                </Link>
+                <Link href="/publications#monographs">
                   <MenubarItem>Monographs</MenubarItem>
-                </MenubarSubContent>
-              </MenubarSub>
+                </Link>
+              </MenubarSubContent>
+            </MenubarSub>
+              
               <MenubarSub>
                 <MenubarSubTrigger>Resources</MenubarSubTrigger>
                 <MenubarSubContent>
-                  <MenubarItem>Datasets</MenubarItem>
-                  <MenubarItem>Tools and Software</MenubarItem>
-                  <MenubarItem>Open Access Research</MenubarItem>
-                  <MenubarItem>Collaboration Portals</MenubarItem>
+                  <Link href="/resources#datasets">
+                    <MenubarItem>Datasets</MenubarItem>
+                  </Link>
+                  <Link href="/resources#tools-software">
+                    <MenubarItem>Tools and Software</MenubarItem>
+                  </Link>
+                  <Link href="/resources#open-access-research">
+                    <MenubarItem>Open Access Research</MenubarItem>
+                  </Link>
+                  <Link href="/resources#collaboration-portals">
+                    <MenubarItem>Collaboration Portals</MenubarItem>
+                  </Link>
                 </MenubarSubContent>
               </MenubarSub>
+
             </MenubarContent>
           </MenubarMenu>
 
@@ -132,12 +156,12 @@ const Navbar = () => {
           <MenubarMenu>
             <MenubarTrigger>Professional Development</MenubarTrigger>
             <MenubarContent>
-              <MenubarItem>Upcoming and Past Events</MenubarItem>
+              <Link href={"/upcomingAndPastEvents"}><MenubarItem>Upcoming and Past Events</MenubarItem></Link>
               <MenubarSub>
-                <MenubarSubTrigger>Courses/Trainings</MenubarSubTrigger>
+              <Link href={"/courses"}><MenubarSubTrigger>Courses/Trainings</MenubarSubTrigger></Link>
                 <MenubarSubContent>
-                  <MenubarItem>Professional Development Courses</MenubarItem>
-                  <MenubarItem>Virtual Research Learning Series</MenubarItem>
+                <Link href={"/courses#training"}><MenubarItem>Professional Development Courses</MenubarItem></Link>
+                <Link href={"/courses#virtual-research-learning-series"}><MenubarItem>Virtual Research Learning Series</MenubarItem></Link>
                 </MenubarSubContent>
               </MenubarSub>
             </MenubarContent>
@@ -145,21 +169,47 @@ const Navbar = () => {
 
           {/* Contact Us */}
           <MenubarMenu>
-            <MenubarTrigger>Contact Us</MenubarTrigger>
+            <Link href={"/contact-us"}><MenubarTrigger>Contact Us</MenubarTrigger></Link>
             <MenubarContent>
-              <MenubarItem>Our Offices</MenubarItem>
-              <MenubarItem>Contact Form</MenubarItem>
-              <MenubarItem>Email and Phone</MenubarItem>
+            <Link href={"/contact-us#ourOffices"}><MenubarItem>Our Offices</MenubarItem></Link>
+            <Link href={"/contact-us#contactForm"}><MenubarItem>Contact Form</MenubarItem></Link>
+            <Link href={"contact-us#emailAndPhone"}><MenubarItem>Email and Phone</MenubarItem></Link>
             </MenubarContent>
           </MenubarMenu>
         </Menubar>
 
         {/* Sign Up/Sign In Buttons */}
-        <div className="flex space-x-4">
-          <Button variant="secondary">Sign In</Button>
-          <Button>Sign Up</Button>
+        <div className="flex flex-col lg:flex-row gap-6">
+          {session ? (
+            <>
+              <div className="flex flex-col lg:flex-row gap-3">
+                <Link href="/create-conference">
+                  <Button variant={'default'}>Create Conference</Button>
+                </Link>
+                <Link href="/dashboard">
+                  <Button className="w-full md:w-auto bg-slate-100 text-black" variant="outline">
+                    Dashboard
+                  </Button>
+                </Link>
+                <Account {...user} />
+              </div>
+            </>
+          ) : (
+            <div className="flex gap-4 items-center">
+              <Link href="/sign-in">
+                <Button className="p-2 h-8 rounded-sm" variant="ghost">
+                  Login
+                </Button>
+              </Link>
+              <Link href="/sign-up">
+                <Button className="p-2 h-8 rounded-sm" variant="default">
+                  Sign up
+                </Button>
+              </Link>
+            </div>
+          )}
         </div>
-      </div>
+        </div>
     </header>
   );
 };

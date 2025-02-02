@@ -37,11 +37,13 @@ const teamData = {
 };
 
 const TeamPage = () => {
-  const renderCard = (member: { name: string; role: string; image: string }) => (
-    <div className="flex flex-col items-center bg-white shadow-md rounded-lg p-4">
+  const renderCard = (member:{ name: string; role: string; image: string },key:number) => (
+    <div key={key} className="flex flex-col items-center bg-white shadow-md rounded-lg p-4">
       <Image
         src={member.image}
         alt={member.name}
+        width={100}
+        height={100}
         className="w-32 h-32 object-cover rounded-full mb-4"
       />
       <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
@@ -50,7 +52,7 @@ const TeamPage = () => {
   );
 
   return (
-    <div className="bg-gray-50 py-16">
+    <div className="bg-gray-50 py-16" >
       <div className="max-w-7xl mx-auto px-4">
         {/* Page Header */}
         <div className="text-center mb-12">
@@ -61,34 +63,34 @@ const TeamPage = () => {
         </div>
 
         {/* Project Managers Section */}
-        <section className="mb-16">
+        <section className="mb-16" id="projectManagers">
           <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">Project Managers</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {teamData.projectManagers.map(renderCard)}
+            {teamData.projectManagers.map((items,key)=>renderCard(items,key))}
           </div>
         </section>
 
         {/* Researchers Section */}
-        <section className="mb-16">
+        <section className="mb-16" id="researchers">
           <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">Researchers</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {teamData.researchers.map(renderCard)}
+            {teamData.researchers.map((items,key)=>renderCard(items,key))}
           </div>
         </section>
 
         {/* Consultants Section */}
-        <section className="mb-16">
+        <section className="mb-16" id="consultants">
           <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">Consultants</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {teamData.consultants.map(renderCard)}
+            {teamData.consultants.map((items,key)=>renderCard(items,key))}
           </div>
         </section>
 
         {/* Advisers Section */}
         <section>
-          <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">Advisers</h2>
+          <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center" id="advisers">Advisers</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {teamData.advisers.map(renderCard)}
+            {teamData.advisers.map((items,key)=>renderCard(items,key))}
           </div>
         </section>
       </div>
