@@ -20,6 +20,7 @@ import { Suspense, useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import Image from 'next/image';
 import { useToast } from '@/hooks/use-toast';
+import { calling } from '../serverActionForAuth';
 
 function SignInForm() {
   const router = useRouter();
@@ -64,7 +65,6 @@ function SignInForm() {
       router.push(result.url);
     }
   };
-
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-gray-200 to-blue-400">
       <div className="w-full max-w-md p-6 space-y-8 bg-white rounded-lg shadow-2xl">
@@ -138,7 +138,7 @@ function SignInForm() {
 
        <div className="flex gap-3 items-center justify-center">
         <form
-          action={async () => await signIn('google')}
+          action={calling}
           className="flex justify-center"
         >
           <button

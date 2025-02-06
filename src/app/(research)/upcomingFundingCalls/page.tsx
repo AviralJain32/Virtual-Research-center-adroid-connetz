@@ -26,7 +26,7 @@ const fundingCalls = [
     },
   ];
 
-export function FundingCallsPage() {
+function FundingCallsPage() {
     return (
       <div className="container mx-auto p-6">
         <h1 className="text-3xl font-bold mb-6">Upcoming Funding Calls</h1>

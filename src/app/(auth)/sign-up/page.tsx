@@ -26,6 +26,7 @@ import Image from "next/image"
 import { signIn } from "next-auth/react"
 import { useToast } from "@/hooks/use-toast"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { calling } from "../serverActionForAuth"
 
 const Page = () => {
   const [email, setEmail] = useState("")
@@ -72,7 +73,7 @@ const Page = () => {
         {/* google and orcid sign in */}
             <div className="flex gap-3 items-center justify-center">
                 <form
-                  action={async () => await signIn('google')}
+                  action={calling}
                   className="flex justify-center"
                 >
                   <button
