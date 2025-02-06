@@ -65,7 +65,7 @@ const Navbar = () => {
   return (
     <header className="w-full bg-white shadow-md">
       {/* Mobile Navigation */}
-      <div className="lg:hidden flex justify-between items-center ">
+      <div className="lg:hidden flex justify-between items-center p-4">
         <div className="flex gap-2">
           {/* Animate the Hamburger Menu to Cross */}
           <motion.div
