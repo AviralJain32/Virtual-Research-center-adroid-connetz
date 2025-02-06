@@ -1,14 +1,10 @@
-import { NextAuthOptions, User } from "next-auth";
+import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcryptjs from "bcryptjs"
 import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/model/User";
 import Google from "next-auth/providers/google"
-import mongoose from "mongoose";
 
-interface NewUser extends User{
-    email_verified:string
-}
 export const authOptions:NextAuthOptions={
     providers:[
         CredentialsProvider({

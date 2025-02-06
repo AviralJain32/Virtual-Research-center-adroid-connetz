@@ -33,7 +33,8 @@ const VerifyPage = () => {
         description: response.data.message,
       });
       router.replace('/sign-in');
-    } catch (error: any) {
+      /* eslint-disable @typescript-eslint/no-explicit-any */
+    } catch (error:any) {
       const axiosError = error as AxiosError<ApiResponse>;
       toast({
         title: 'Verification Failed',
@@ -42,6 +43,7 @@ const VerifyPage = () => {
           'An error occurred. Please try again.',
         variant: 'destructive',
       });
+      /* eslint-enable */
     }
   };
 

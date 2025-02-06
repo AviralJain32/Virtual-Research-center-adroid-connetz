@@ -14,7 +14,7 @@ export default function CoursesPage() {
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="flex-1">
             <Image
-              src="/virtual-research.jpg"
+              src="/images/course1.jpg"
               width={500}
               height={300}
               alt="Virtual Research Learning Series"
@@ -49,7 +49,7 @@ export default function CoursesPage() {
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="flex-1">
             <Image
-              src="/course-1.jpg"
+              src="/images/course2.jpg"
               width={500}
               height={300}
               alt="Course 1"
@@ -72,7 +72,7 @@ export default function CoursesPage() {
               <li>Duration: 8 Weeks</li>
               <li>Price: $499</li>
             </ul>
-            <a href="/course-1" className="text-blue-600 font-semibold hover:underline transition duration-200">
+            <a href="/images/course-1" className="text-blue-600 font-semibold hover:underline transition duration-200">
               Enroll Now
             </a>
           </div>
@@ -84,7 +84,7 @@ export default function CoursesPage() {
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="flex-1">
             <Image
-              src="/course-2.jpg"
+              src="/images/course3.jpg"
               width={500}
               height={300}
               alt="Course 2"
@@ -107,7 +107,7 @@ export default function CoursesPage() {
               <li>Duration: 12 Weeks</li>
               <li>Price: $799</li>
             </ul>
-            <a href="/course-2" className="text-blue-600 font-semibold hover:underline transition duration-200">
+            <a href="/images/course-2" className="text-blue-600 font-semibold hover:underline transition duration-200">
               Enroll Now
             </a>
           </div>
@@ -119,7 +119,7 @@ export default function CoursesPage() {
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="flex-1">
             <Image
-              src="/course-3.jpg"
+              src="/images/course4.jpg"
               width={500}
               height={300}
               alt="Course 3"
@@ -142,7 +142,7 @@ export default function CoursesPage() {
               <li>Duration: 10 Weeks</li>
               <li>Price: $399</li>
             </ul>
-            <a href="/course-3" className="text-blue-600 font-semibold hover:underline transition duration-200">
+            <a href="/images/course-3" className="text-blue-600 font-semibold hover:underline transition duration-200">
               Enroll Now
             </a>
           </div>
@@ -154,7 +154,7 @@ export default function CoursesPage() {
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="flex-1">
             <Image
-              src="/course-4.jpg"
+              src="/images/course5.jpg"
               width={500}
               height={300}
               alt="Course 4"
@@ -177,7 +177,7 @@ export default function CoursesPage() {
               <li>Duration: 8 Weeks</li>
               <li>Price: $599</li>
             </ul>
-            <a href="/course-4" className="text-blue-600 font-semibold hover:underline transition duration-200">
+            <a href="/images/course-4" className="text-blue-600 font-semibold hover:underline transition duration-200">
               Enroll Now
             </a>
           </div>
@@ -189,7 +189,7 @@ export default function CoursesPage() {
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="flex-1">
             <Image
-              src="/course-5.jpg"
+              src="/images/course6.jpg"
               width={500}
               height={300}
               alt="Course 5"
@@ -212,7 +212,7 @@ export default function CoursesPage() {
               <li>Duration: 6 Weeks</li>
               <li>Price: $399</li>
             </ul>
-            <a href="/course-5" className="text-blue-600 font-semibold hover:underline transition duration-200">
+            <a href="/images/course-5" className="text-blue-600 font-semibold hover:underline transition duration-200">
               Enroll Now
             </a>
           </div>

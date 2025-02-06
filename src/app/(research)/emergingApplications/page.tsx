@@ -1,6 +1,3 @@
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-
 function EmergingApplicationsPage() {
 
     // const router = useRouter();

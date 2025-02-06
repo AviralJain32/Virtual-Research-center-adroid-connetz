@@ -74,7 +74,7 @@ export default function ProposalWriting() {
 
         <h2 className="text-2xl font-semibold mt-8 mb-4 text-gray-800">Upcoming Training Sessions</h2>
         <p className="text-lg text-gray-700 mb-6">
-          Don't miss out on the opportunity to refine your proposal-writing skills. Check out our <a href="/upcoming-events" className="text-blue-600 font-medium">upcoming events</a> and register for the next session.
+          Don&apos;t miss out on the opportunity to refine your proposal-writing skills. Check out our <a href="/upcoming-events" className="text-blue-600 font-medium">upcoming events</a> and register for the next session.
         </p>
 
         <div className="text-center mt-8">

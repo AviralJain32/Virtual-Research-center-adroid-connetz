@@ -24,7 +24,7 @@ export default function HighQualityArticles() {
 
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-semibold mb-4 text-gray-900">
-          What You'll Learn
+          What You&apos;ll Learn
         </h2>
         <p className="text-lg text-gray-700 mb-6">
           This training will provide you with comprehensive insights into the world of academic publishing. You will learn how to navigate the complex landscape of research publishing, improve your writing skills, and understand how to make your research stand out.
@@ -51,7 +51,7 @@ export default function HighQualityArticles() {
 
         <h3 className="text-2xl font-semibold mb-4 text-gray-800">Upcoming Training Session</h3>
         <p className="text-lg text-gray-700 mb-6">
-          Ready to take the next step in your academic journey? Our next training session is just around the corner. Don't miss the opportunity to learn from seasoned professionals in the publishing field. <strong>Seats are limited!</strong>
+          Ready to take the next step in your academic journey? Our next training session is just around the corner. Don&apos;t miss the opportunity to learn from seasoned professionals in the publishing field. <strong>Seats are limited!</strong>
         </p>
 
         <p className="text-lg text-gray-700 mb-6">

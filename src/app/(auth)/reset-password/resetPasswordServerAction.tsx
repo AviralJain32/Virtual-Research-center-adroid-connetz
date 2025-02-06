@@ -36,8 +36,10 @@ export const resetPasswordAction=async(token:string, newPassword:string)=>{
           success: true,
           status:200
         };
+        /* eslint-disable @typescript-eslint/no-explicit-any */
       } catch (error: any) {
         console.error("Error resetting password:", error.message);
         return { message: "Error resetting password",status: 500 };
       }
+      /* eslint-enable */
 }

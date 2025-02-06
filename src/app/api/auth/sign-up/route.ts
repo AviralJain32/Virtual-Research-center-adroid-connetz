@@ -6,7 +6,7 @@ import bcryptjs from "bcryptjs"
 export async function POST(request:Request){
     await dbConnect()
     try {
-        const {firstname,lastname,email,password,country,affilation,contactNumber,retypePassword}=await request.json()
+        const {firstname,lastname,email,password,country,affilation,contactNumber}=await request.json()
         const fullname=firstname+" "+lastname
         
         const existingUerByEmail=await UserModel.findOne({email})

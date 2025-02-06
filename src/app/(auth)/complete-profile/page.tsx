@@ -38,12 +38,14 @@ const CompleteProfile = () => {
       try {
         const response=await axios.get(`/api/auth/complete-profile?email=${email}`)
         setProfileDetails(response.data.data)
-      } catch (error:any) {
+        /* eslint-disable @typescript-eslint/no-explicit-any */
+      } catch (error:any) { 
         console.log(error.response.data.message)
       }
+      /* eslint-enable */
     } 
     fetchUserDetails()
-  },[])
+  },[email])
 
   // zod implementation
   const form = useForm<z.infer<typeof CompleteProfileSchema>>({

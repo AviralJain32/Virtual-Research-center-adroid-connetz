@@ -6,7 +6,7 @@ export default function ContactUsPage() {
           Contact Us
         </h1>
         <p className="text-lg text-gray-700 mb-12 text-center">
-          Get in touch with us for any inquiries or assistance. We're here to help!
+          Get in touch with us for any inquiries or assistance. We&apos;re here to help!
         </p>
   
         {/* Our Offices */}
