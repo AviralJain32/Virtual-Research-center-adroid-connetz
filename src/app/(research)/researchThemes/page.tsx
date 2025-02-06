@@ -21,7 +21,7 @@ const researchThemes = [
   ];
   
 
-  export function ResearchThemesPage() {
+  export function page() {
     return (
       <div className="container mx-auto p-6">
         <h1 className="text-3xl font-bold mb-6">Research Themes</h1>
@@ -38,4 +38,4 @@ const researchThemes = [
     );
   }
   
-  export default ResearchThemesPage
+  export default page
